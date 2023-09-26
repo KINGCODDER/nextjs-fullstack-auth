@@ -1,13 +1,19 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Preload, Environment, PerspectiveCamera } from "@react-three/drei";
+import {
+  Preload,
+  Environment,
+  PerspectiveCamera,
+  useHelper,
+} from "@react-three/drei";
+
 import Portal from "./Portal";
-import Words from "./Words";
+import { useRef } from "react";
 import OrbitControls from "./Controls";
-import Box from "./Box";
 import { Suspense } from "react";
 import Loader from "./Loader";
+import Lights from "./Light";
 
 export default function Model3D() {
   return (
@@ -15,24 +21,20 @@ export default function Model3D() {
       frameloop="demand"
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [15, 5, 55], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<Loader />}>
+        <Lights />
         <Environment background={"only"} files={"./textures/galaxy.hdr"} />
         {/* <Environment background={false} files={"./textures/envmap.hdr"} /> */}
 
         {/* <Portal /> */}
         {/* <Words /> */}
-        <PerspectiveCamera
-          target={[1, 5, 0]}
-          fov={50}
-          position={[-1.75, 10.85, 20.35]}
-        />
+        <PerspectiveCamera fov={20} />
 
         <OrbitControls />
         <Portal />
-        <ambientLight color={"white"} intensity={0.2} />
       </Suspense>
       <Preload all />
     </Canvas>
