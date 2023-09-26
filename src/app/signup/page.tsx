@@ -43,42 +43,44 @@ export default function SignupPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-center text-white text-2xl">
-        {loading ? "Loading..." : "Signup"}
-      </h1>
-      <hr />
-      <label htmlFor="username">Username</label>
-      <input
-        className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-        type="text"
-        value={user.username}
-        onChange={(e) => setUser({ ...user, username: e.target.value })}
-        placeholder="username"
-      />
-      <label htmlFor="email">Email</label>
-      <input
-        className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-        type="text"
-        value={user.email}
-        onChange={(e) => setUser({ ...user, email: e.target.value })}
-        placeholder="email"
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-        type="text"
-        value={user.password}
-        onChange={(e) => setUser({ ...user, password: e.target.value })}
-        placeholder="password"
-      />
+      <div className="flex flex-col items-center justify-center p-10 rounded-mdz backdrop-blur drop-shadow-xl bg-[#95adbe1c]">
+        <h1 className="text-center text-white text-2xl">
+          {loading ? "Loading..." : "Signup"}
+        </h1>
+        <hr />
+        <label htmlFor="username">Username</label>
+        <input
+          className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+          type="text"
+          value={user.username}
+          onChange={(e) => setUser({ ...user, username: e.target.value })}
+          placeholder="username"
+        />
+        <label htmlFor="email">Email</label>
+        <input
+          className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+          type="text"
+          value={user.email}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+          placeholder="email"
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+          type="text"
+          value={user.password}
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
+          placeholder="password"
+        />
 
-      <button
-        onClick={onSignup}
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outine-none focus:border-gray-600"
-      >
-        {buttonDisabled ? "No Signup" : " Signup"}
-      </button>
-      <Link href="/login">Visit Login Page</Link>
+        <button
+          onClick={onSignup}
+          className="p-2 border border-gray-300 rounded-lg mb-4 focus:outine-none focus:border-gray-600"
+        >
+          {buttonDisabled ? "No Signup" : " Signup"}
+        </button>
+        <Link href="/login">Visit Login Page</Link>
+      </div>
     </div>
   );
 }
