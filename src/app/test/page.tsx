@@ -14,6 +14,8 @@ import OrbitControls from "./Controls";
 import { Suspense } from "react";
 import Loader from "./Loader";
 import Lights from "./Light";
+import Stars from "./Stars";
+import Box from "./Box";
 
 export default function Model3D() {
   return (
@@ -25,12 +27,13 @@ export default function Model3D() {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<Loader />}>
+        <Stars />
         <Lights />
         <Environment background={"only"} files={"./textures/galaxy.hdr"} />
         {/* <Environment background={false} files={"./textures/envmap.hdr"} /> */}
-
         {/* <Portal /> */}
         {/* <Words /> */}
+        {/* <Box /> */}
         <PerspectiveCamera fov={20} />
 
         <OrbitControls />
