@@ -1,6 +1,5 @@
 import { useControls } from "leva";
 import { useRef } from "react";
-import * as THREE from "three";
 import { useHelper } from "@react-three/drei";
 import { DirectionalLightHelperProps } from "react-three-fiber";
 import { DirectionalLight, DirectionalLightHelper } from "three";

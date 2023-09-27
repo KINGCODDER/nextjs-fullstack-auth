@@ -8,14 +8,13 @@ import {
   useHelper,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import * as THREE from "three";
-import { useRef } from "react";
 
+import { useRef } from "react";
 
 export default function Portal() {
   const gltf = useGLTF("./scene/scene.gltf");
   const camera = useRef();
-  useHelper(camera, THREE.CameraHelper);
+
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
