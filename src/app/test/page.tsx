@@ -5,7 +5,7 @@ import {
   Preload,
   Environment,
   PerspectiveCamera,
-  useHelper,
+  Float,
 } from "@react-three/drei";
 
 import Portal from "./Portal";
@@ -15,7 +15,7 @@ import { Suspense } from "react";
 import Loader from "./Loader";
 import Lights from "./Light";
 import Stars from "./Stars";
-import Box from "./Box";
+import Words from "./Words";
 
 export default function Model3D() {
   return (
@@ -26,18 +26,19 @@ export default function Model3D() {
       camera={{ position: [15, 5, 55], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={null}>
         <Stars />
+      </Suspense>
+
+      <Suspense fallback={<Loader />}>
         <Lights />
         <Environment background={"only"} files={"./textures/galaxy.hdr"} />
-        {/* <Environment background={false} files={"./textures/envmap.hdr"} /> */}
-        {/* <Portal /> */}
-        {/* <Words /> */}
-        {/* <Box /> */}
+        <Float speed={0.5} rotationIntensity={0.6} floatIntensity={0.6}>
+          <Words />
+          <Portal />
+        </Float>
         <PerspectiveCamera fov={20} />
-
         <OrbitControls />
-        <Portal />
       </Suspense>
       <Preload all />
     </Canvas>

@@ -49,6 +49,7 @@ export default function Lights() {
         color="#003ad7"
         intensity={4}
       />
+
       {/* <directionalLightHelper /> */}
     </>
   );

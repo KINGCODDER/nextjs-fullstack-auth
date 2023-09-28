@@ -39,7 +39,6 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className="w-full h-full absolute inset-0 z-[-1]"></div>
       <div className="flex flex-col items-center justify-center min-h-screen py-2 absolute top-0 left-[50%] right-[50%]">
         <div className="flex flex-col items-center justify-center p-10 rounded backdrop-blur drop-shadow-xl bg-[#95adbe1c]">
           <h1 className="text-center text-white text-2xl">

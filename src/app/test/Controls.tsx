@@ -7,15 +7,10 @@ export default function Controls() {
   const { camera, gl } = useThree();
   return (
     <OrbitControls
-      // attach={"orbitControls"}
-      // args={[camera, gl.domElement]}
-      // enableZoom={false}
-      // maxPolarAngle={Math.PI / 2}
-      // minPolarAngle={Math.PI / 2}
+      attach={"orbitControls"}
+      args={[camera, gl.domElement]}
       enableZoom={false}
       maxPolarAngle={Math.PI * 0.5}
-      // maxPolarAngle={Math.PI / 2}
-      // minPolarAngle={Math.PI / 2}
     />
   );
 }

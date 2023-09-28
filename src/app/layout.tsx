@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Portal from "./test/page";
-import Stars from "./test/Stars";
+import StarsCanvas from "./test/Stars";
 
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
@@ -57,7 +57,6 @@ export default function RootLayout({
             ></span>
           );
         })} */}
-        {/* <StarsCanvas /> */}
 
         {children}
       </body>
