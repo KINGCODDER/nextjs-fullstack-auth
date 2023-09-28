@@ -26,9 +26,9 @@ export default function Model3D() {
       camera={{ position: [15, 5, 55], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={null}>
+      {/* <Suspense fallback={null}>
         <Stars />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<Loader />}>
         <Lights />
