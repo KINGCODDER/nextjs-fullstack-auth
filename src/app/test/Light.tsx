@@ -2,7 +2,6 @@ import { useControls } from "leva";
 import { useRef } from "react";
 import { useHelper } from "@react-three/drei";
 import { DirectionalLightHelperProps } from "react-three-fiber";
-import { DirectionalLight, DirectionalLightHelper } from "three";
 
 export default function Lights() {
   const directionalLightRef2 = useRef(null);
