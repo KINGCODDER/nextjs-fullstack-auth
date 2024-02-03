@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import ReactTyped from "react-typed";
 
 export default function SignupPage() {
   const [loading, setLoading] = React.useState(false);
@@ -42,45 +43,50 @@ export default function SignupPage() {
   }, [user]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <div className="flex flex-col items-center justify-center p-10 rounded-mdz backdrop-blur drop-shadow-xl bg-[#95adbe1c]">
-        <h1 className="text-center text-white text-2xl">
-          {loading ? "Loading..." : "Signup"}
-        </h1>
-        <hr />
-        <label htmlFor="username">Username</label>
-        <input
-          className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-          type="text"
-          value={user.username}
-          onChange={(e) => setUser({ ...user, username: e.target.value })}
-          placeholder="username"
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-          type="text"
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-          placeholder="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-          type="text"
-          value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
-          placeholder="password"
-        />
-
-        <button
-          onClick={onSignup}
-          className="p-2 border border-gray-300 rounded-lg mb-4 focus:outine-none focus:border-gray-600"
-        >
-          {buttonDisabled ? "No Signup" : " Signup"}
-        </button>
-        <Link href="/login">Visit Login Page</Link>
+    <>
+      <div className="absolute top-[13%] text-4xl w-full text-center">
+        <ReactTyped strings={["Welcome to Portal!"]} typeSpeed={100} loop />
       </div>
-    </div>
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 absolute top-0 left-[50%] right-[50%]">
+        <div className="flex flex-col items-center justify-center p-10 rounded backdrop-blur drop-shadow-xl bg-[#95adbe1c]">
+          <h1 className="text-center text-white text-2xl">
+            {loading ? "Loading..." : "Signup"}
+          </h1>
+          <hr />
+          <label htmlFor="username">Username</label>
+          <input
+            className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+            type="text"
+            value={user.username}
+            onChange={(e) => setUser({ ...user, username: e.target.value })}
+            placeholder="username"
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+            type="text"
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+            placeholder="email"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+            type="text"
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
+            placeholder="password"
+          />
+
+          <button
+            onClick={onSignup}
+            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outine-none focus:border-gray-600"
+          >
+            {buttonDisabled ? "No Signup" : " Signup"}
+          </button>
+          <Link href="/login">Visit Login Page</Link>
+        </div>
+      </div>
+    </>
   );
 }

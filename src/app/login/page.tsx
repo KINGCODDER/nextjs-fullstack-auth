@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { Suspense } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import ReactTyped from "react-typed";
 
 import { Canvas } from "react-three-fiber";
 import Stars from "../test/Stars";
@@ -39,6 +40,9 @@ export default function LoginPage() {
 
   return (
     <>
+      <div className="absolute top-[13%] text-4xl w-full text-center">
+        <ReactTyped strings={["Welcome to Portal!"]} typeSpeed={100} loop />
+      </div>
       <div className="flex flex-col items-center justify-center min-h-screen py-2 absolute top-0 left-[50%] right-[50%]">
         <div className="flex flex-col items-center justify-center p-10 rounded backdrop-blur drop-shadow-xl bg-[#95adbe1c]">
           <h1 className="text-center text-white text-2xl">
